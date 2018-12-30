@@ -5,15 +5,20 @@
   
 
   
-  <title>Hexo</title>
+  <title>Haskell 中缀表达式转后缀表达式并计算 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="整数范围内的四则运算（包含乘方、分数运算,没做容错处理）首先定义各运算符的优先级12345678910--定义各符号的优先级--由于算法中已经设置了遇&quot;(&quot;必定压栈，&quot;)&quot;必定出栈，故只需将其优先级设置为最小与最大即可precedence x = case x of                 &quot;+&quot; -&amp;gt; 2                  &quot;-&quot; -&amp;gt; 2">
+<meta name="keywords" content="haskell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Haskell 中缀表达式转后缀表达式并计算">
+<meta property="og:url" content="http://yoursite.com/2018/12/30/infix2rpn/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="整数范围内的四则运算（包含乘方、分数运算,没做容错处理）首先定义各运算符的优先级12345678910--定义各符号的优先级--由于算法中已经设置了遇&quot;(&quot;必定压栈，&quot;)&quot;必定出栈，故只需将其优先级设置为最小与最大即可precedence x = case x of                 &quot;+&quot; -&amp;gt; 2                  &quot;-&quot; -&amp;gt; 2">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-30T09:10:50.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Haskell 中缀表达式转后缀表达式并计算">
+<meta name="twitter:description" content="整数范围内的四则运算（包含乘方、分数运算,没做容错处理）首先定义各运算符的优先级12345678910--定义各符号的优先级--由于算法中已经设置了遇&quot;(&quot;必定压栈，&quot;)&quot;必定出栈，故只需将其优先级设置为最小与最大即可precedence x = case x of                 &quot;+&quot; -&amp;gt; 2                  &quot;-&quot; -&amp;gt; 2">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,9 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-infix2rpn" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-infix2rpn" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/30/infix2rpn/" class="article-date">
   <time datetime="2018-12-30T08:29:21.000Z" itemprop="datePublished">2018-12-30</time>
@@ -75,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/30/infix2rpn/">Haskell 中缀表达式转后缀表达式并计算</a>
+    <h1 class="article-title" itemprop="name">
+      Haskell 中缀表达式转后缀表达式并计算
     </h1>
   
 
@@ -108,11 +111,9 @@
     </footer>
   </div>
   
-</article>
-
-
+    
   
-
+</article>
 
 </section>
         
