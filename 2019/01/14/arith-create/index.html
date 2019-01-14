@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同很容易想到用树形数据结构表示比较合适，即 [左子树 根结点 右子树] 的形式 在这里定义为 12--定义表达式类型	单独一个数    或	   左表达式	   运算符      右表达式  data Expression = Const String | Exp Expression String Expression 只需将此类型加">
+  <meta name="description" content="表达式生成难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同很容易想到用树形数据结构表示比较合适，即 [左子树 根结点 右子树] 的形式 在这里定义为 12--定义表达式类型	单独一个数    或	   左表达式	   运算符      右表达式  data Expression = Const String | Exp Expression String Expression 只需">
 <meta name="keywords" content="haskell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="haskell四则运算表达式生成">
+<meta property="og:title" content="haskell四则运算">
 <meta property="og:url" content="http://yoursite.com/2019/01/14/arith-create/index.html">
 <meta property="og:site_name" content="Carl">
-<meta property="og:description" content="难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同很容易想到用树形数据结构表示比较合适，即 [左子树 根结点 右子树] 的形式 在这里定义为 12--定义表达式类型	单独一个数    或	   左表达式	   运算符      右表达式  data Expression = Const String | Exp Expression String Expression 只需将此类型加">
+<meta property="og:description" content="表达式生成难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同很容易想到用树形数据结构表示比较合适，即 [左子树 根结点 右子树] 的形式 在这里定义为 12--定义表达式类型	单独一个数    或	   左表达式	   运算符      右表达式  data Expression = Const String | Exp Expression String Expression 只需">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-14T10:42:57.247Z">
+<meta property="og:updated_time" content="2019-01-14T10:46:16.544Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="haskell四则运算表达式生成">
-<meta name="twitter:description" content="难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同很容易想到用树形数据结构表示比较合适，即 [左子树 根结点 右子树] 的形式 在这里定义为 12--定义表达式类型	单独一个数    或	   左表达式	   运算符      右表达式  data Expression = Const String | Exp Expression String Expression 只需将此类型加">
+<meta name="twitter:title" content="haskell四则运算">
+<meta name="twitter:description" content="表达式生成难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同很容易想到用树形数据结构表示比较合适，即 [左子树 根结点 右子树] 的形式 在这里定义为 12--定义表达式类型	单独一个数    或	   左表达式	   运算符      右表达式  data Expression = Const String | Exp Expression String Expression 只需">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>haskell四则运算表达式生成 | Carl</title>
+  <title>haskell四则运算 | Carl</title>
   
 
 
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">haskell四则运算表达式生成
+          <h1 class="post-title" itemprop="name headline">haskell四则运算
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="Created: 2019-01-14 17:38:53 / Modified: 18:42:57" itemprop="dateCreated datePublished" datetime="2019-01-14T17:38:53+08:00">2019-01-14</time>
+              <time title="Created: 2019-01-14 17:38:53 / Modified: 18:46:16" itemprop="dateCreated datePublished" datetime="2019-01-14T17:38:53+08:00">2019-01-14</time>
             
 
             
@@ -370,7 +370,7 @@
       
 
       
-        <h5 id="难点：”-”-”-”等满足交换律的表达式在交换后，表达式不能相同"><a href="#难点：”-”-”-”等满足交换律的表达式在交换后，表达式不能相同" class="headerlink" title="难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同"></a>难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同</h5><p>很容易想到用树形数据结构表示比较合适，即 [左子树 根结点 右子树] 的形式</p>
+        <h3 id="表达式生成"><a href="#表达式生成" class="headerlink" title="表达式生成"></a>表达式生成</h3><h5 id="难点：”-”-”-”等满足交换律的表达式在交换后，表达式不能相同"><a href="#难点：”-”-”-”等满足交换律的表达式在交换后，表达式不能相同" class="headerlink" title="难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同"></a>难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同</h5><p>很容易想到用树形数据结构表示比较合适，即 [左子树 根结点 右子树] 的形式</p>
 <p>在这里定义为</p>
 <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--定义表达式类型	单独一个数    或	   左表达式	   运算符      右表达式  </span></span><br><span class="line"><span class="class"><span class="keyword">data</span> <span class="type">Expression</span> = <span class="type">Const</span> <span class="type">String</span> | <span class="type">Exp</span> <span class="type">Expression</span> <span class="type">String</span> <span class="type">Expression</span></span></span><br></pre></td></tr></table></figure>
 <p>只需将此类型加入Eq类型类的实例，并定义(==)运算符，就可以对此类型的表达式进行判同。</p>
@@ -587,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#难点：”-”-”-”等满足交换律的表达式在交换后，表达式不能相同"><span class="nav-number">1.</span> <span class="nav-text">难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表达式生成时为了避免括号的影响，首先生成后缀表达式-语言性质导致随机数生成相较其它语言比较麻烦"><span class="nav-number">2.</span> <span class="nav-text">表达式生成时为了避免括号的影响，首先生成后缀表达式(语言性质导致随机数生成相较其它语言比较麻烦)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查重"><span class="nav-number">3.</span> <span class="nav-text">查重</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将表达式类型转换成中缀表达式并写入文件"><span class="nav-number">4.</span> <span class="nav-text">将表达式类型转换成中缀表达式并写入文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式生成"><span class="nav-number">1.</span> <span class="nav-text">表达式生成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#难点：”-”-”-”等满足交换律的表达式在交换后，表达式不能相同"><span class="nav-number">1.0.1.</span> <span class="nav-text">难点：”+”,”*”等满足交换律的表达式在交换后，表达式不能相同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表达式生成时为了避免括号的影响，首先生成后缀表达式-语言性质导致随机数生成相较其它语言比较麻烦"><span class="nav-number">1.0.2.</span> <span class="nav-text">表达式生成时为了避免括号的影响，首先生成后缀表达式(语言性质导致随机数生成相较其它语言比较麻烦)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查重"><span class="nav-number">1.0.3.</span> <span class="nav-text">查重</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将表达式类型转换成中缀表达式并写入文件"><span class="nav-number">1.0.4.</span> <span class="nav-text">将表达式类型转换成中缀表达式并写入文件</span></a></li></ol></li></ol></div>
             
 
           </div>
