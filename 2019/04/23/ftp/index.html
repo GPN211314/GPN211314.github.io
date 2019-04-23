@@ -96,21 +96,22 @@
 
 
 
-  <meta name="description" content="war-ftp1.65用户名缓冲区溢出   姓名 学号     郭培宁 1120161743    运行环境受害机：Windows XP SP0 攻击机：Kali Linux 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。  查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。 攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢">
+  <meta name="description" content="运行环境受害机：Windows XP SP0 攻击机：Kali Linux 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。  查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。 攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢出，并写入函数栈的高地址方向(即栈底方向)。甚至会覆盖函数的返回地址，从而造成函数返回错误，如果我们">
+<meta name="keywords" content="缓冲区溢出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Carl">
+<meta property="og:title" content="war-ftp1.65用户名缓冲区溢出">
 <meta property="og:url" content="http://yoursite.com/2019/04/23/ftp/index.html">
 <meta property="og:site_name" content="Carl">
-<meta property="og:description" content="war-ftp1.65用户名缓冲区溢出   姓名 学号     郭培宁 1120161743    运行环境受害机：Windows XP SP0 攻击机：Kali Linux 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。  查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。 攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢">
+<meta property="og:description" content="运行环境受害机：Windows XP SP0 攻击机：Kali Linux 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。  查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。 攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢出，并写入函数栈的高地址方向(即栈底方向)。甚至会覆盖函数的返回地址，从而造成函数返回错误，如果我们">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/04/23/ftp/warftp.jpeg">
 <meta property="og:image" content="http://yoursite.com/2019/04/23/ftp/debug.jpeg">
 <meta property="og:image" content="http://yoursite.com/2019/04/23/ftp/match.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/23/ftp/calc.jpeg">
-<meta property="og:updated_time" content="2019-04-23T15:10:46.627Z">
+<meta property="og:updated_time" content="2019-04-23T15:25:38.437Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Carl">
-<meta name="twitter:description" content="war-ftp1.65用户名缓冲区溢出   姓名 学号     郭培宁 1120161743    运行环境受害机：Windows XP SP0 攻击机：Kali Linux 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。  查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。 攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢">
+<meta name="twitter:title" content="war-ftp1.65用户名缓冲区溢出">
+<meta name="twitter:description" content="运行环境受害机：Windows XP SP0 攻击机：Kali Linux 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。  查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。 攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢出，并写入函数栈的高地址方向(即栈底方向)。甚至会覆盖函数的返回地址，从而造成函数返回错误，如果我们">
 <meta name="twitter:image" content="http://yoursite.com/2019/04/23/ftp/warftp.jpeg">
 
 
@@ -128,7 +129,7 @@
   };
 </script>
 
-  <title> | Carl</title>
+  <title>war-ftp1.65用户名缓冲区溢出 | Carl</title>
   
 
 
@@ -310,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">war-ftp1.65用户名缓冲区溢出
 
               
             
@@ -336,9 +337,13 @@
                 
               
 
-              <time title="Created: 2019-04-23 23:10:46" itemprop="dateCreated datePublished" datetime="2019-04-23T23:10:46+08:00">2019-04-23</time>
+              <time title="Created: 2019-04-23 23:24:58 / Modified: 23:25:38" itemprop="dateCreated datePublished" datetime="2019-04-23T23:24:58+08:00">2019-04-23</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -370,21 +375,7 @@
       
 
       
-        <h1 id="war-ftp1-65用户名缓冲区溢出"><a href="#war-ftp1-65用户名缓冲区溢出" class="headerlink" title="war-ftp1.65用户名缓冲区溢出"></a>war-ftp1.65用户名缓冲区溢出</h1><table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>学号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>郭培宁</td>
-<td>1120161743</td>
-</tr>
-</tbody>
-</table>
-<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>受害机：<code>Windows XP SP0</code></p>
+        <h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>受害机：<code>Windows XP SP0</code></p>
 <p>攻击机：<code>Kali Linux</code></p>
 <h2 id="软件及漏洞说明"><a href="#软件及漏洞说明" class="headerlink" title="软件及漏洞说明"></a>软件及漏洞说明</h2><p>War-ftp 是一个可以快速搭建ftp服务器的软件。</p>
 <p><img src="warftp.jpeg" alt=""></p>
@@ -456,6 +447,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/缓冲区溢出/" rel="tag"># 缓冲区溢出</a>
+          
+        </div>
       
 
       
@@ -574,7 +571,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -623,7 +622,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#war-ftp1-65用户名缓冲区溢出"><span class="nav-number">1.</span> <span class="nav-text">war-ftp1.65用户名缓冲区溢出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number">1.1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件及漏洞说明"><span class="nav-number">1.2.</span> <span class="nav-text">软件及漏洞说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击原理"><span class="nav-number">1.3.</span> <span class="nav-text">攻击原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击方法和步骤"><span class="nav-number">1.4.</span> <span class="nav-text">攻击方法和步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">1.5.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number">1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件及漏洞说明"><span class="nav-number">2.</span> <span class="nav-text">软件及漏洞说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击原理"><span class="nav-number">3.</span> <span class="nav-text">攻击原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击方法和步骤"><span class="nav-number">4.</span> <span class="nav-text">攻击方法和步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">5.</span> <span class="nav-text">结果</span></a></li></ol></div>
             
 
           </div>

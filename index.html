@@ -308,7 +308,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/23/ftp/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/04/23/ftp/" class="post-title-link" itemprop="url">war-ftp1.65用户名缓冲区溢出</a>
               
             
           </h1>
@@ -333,9 +333,13 @@
                 
               
 
-              <time title="Created: 2019-04-23 23:10:46" itemprop="dateCreated datePublished" datetime="2019-04-23T23:10:46+08:00">2019-04-23</time>
+              <time title="Created: 2019-04-23 23:24:58 / Modified: 23:25:38" itemprop="dateCreated datePublished" datetime="2019-04-23T23:24:58+08:00">2019-04-23</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -370,26 +374,12 @@
         
           
             <p>
-              war-ftp1.65用户名缓冲区溢出
-
-
-姓名
-学号
-
-
-
-
-郭培宁
-1120161743
-
-
-
-运行环境受害机：Windows XP SP0
+              运行环境受害机：Windows XP SP0
 攻击机：Kali Linux
 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。
 
 查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。
-攻
+攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢
               ...
             </p>
           <!--noindex-->
@@ -1144,7 +1134,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
