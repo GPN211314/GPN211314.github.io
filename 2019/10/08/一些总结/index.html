@@ -96,24 +96,25 @@
 
 
 
-  <meta name="description" content="最近在写haskell代码的时候遇到一些搜索的问题（本来对haskell的理解就不咋地），想法总是受编程范式的限制，写不出来，写DFS还好，函数递归就行，而想到BFS就不得不用队列实现，我在网上也找到了几个队列实现的BFS 队列实现的BFS1234567891011breadFirstSearch :: Ix a =&amp;gt; a -&amp;gt; Graph a a -&amp;gt; [a]breadFirs">
+  <meta name="description" content="近来也写了一些 haskell代码，本文就随便说说感受和一些总结 说一下最近学到点什么学haskell也有一年了，之前从来没接触过函数式的语言，也就最近算写的代码比较多的了，之前一直都是沉浸在haskell的各种特性中，因为从没有接触过所以特别新奇，刚开始学的时候monad可是把我难倒了，不多bb，写点总结吧。 透镜组这个看过几次，但是没用过，也没有遇到需要用的 State Monad没真正用过，">
+<meta name="keywords" content="haskell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Haskell不用队列实现BFS">
-<meta property="og:url" content="http://yoursite.com/2019/10/06/bfs/index.html">
+<meta property="og:title" content="一些总结">
+<meta property="og:url" content="http://yoursite.com/2019/10/08/一些总结/index.html">
 <meta property="og:site_name" content="Carl">
-<meta property="og:description" content="最近在写haskell代码的时候遇到一些搜索的问题（本来对haskell的理解就不咋地），想法总是受编程范式的限制，写不出来，写DFS还好，函数递归就行，而想到BFS就不得不用队列实现，我在网上也找到了几个队列实现的BFS 队列实现的BFS1234567891011breadFirstSearch :: Ix a =&amp;gt; a -&amp;gt; Graph a a -&amp;gt; [a]breadFirs">
+<meta property="og:description" content="近来也写了一些 haskell代码，本文就随便说说感受和一些总结 说一下最近学到点什么学haskell也有一年了，之前从来没接触过函数式的语言，也就最近算写的代码比较多的了，之前一直都是沉浸在haskell的各种特性中，因为从没有接触过所以特别新奇，刚开始学的时候monad可是把我难倒了，不多bb，写点总结吧。 透镜组这个看过几次，但是没用过，也没有遇到需要用的 State Monad没真正用过，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-07T17:47:36.846Z">
+<meta property="og:updated_time" content="2019-10-07T18:21:17.426Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Haskell不用队列实现BFS">
-<meta name="twitter:description" content="最近在写haskell代码的时候遇到一些搜索的问题（本来对haskell的理解就不咋地），想法总是受编程范式的限制，写不出来，写DFS还好，函数递归就行，而想到BFS就不得不用队列实现，我在网上也找到了几个队列实现的BFS 队列实现的BFS1234567891011breadFirstSearch :: Ix a =&amp;gt; a -&amp;gt; Graph a a -&amp;gt; [a]breadFirs">
+<meta name="twitter:title" content="一些总结">
+<meta name="twitter:description" content="近来也写了一些 haskell代码，本文就随便说说感受和一些总结 说一下最近学到点什么学haskell也有一年了，之前从来没接触过函数式的语言，也就最近算写的代码比较多的了，之前一直都是沉浸在haskell的各种特性中，因为从没有接触过所以特别新奇，刚开始学的时候monad可是把我难倒了，不多bb，写点总结吧。 透镜组这个看过几次，但是没用过，也没有遇到需要用的 State Monad没真正用过，">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/06/bfs/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/08/一些总结/">
 
 
 
@@ -123,7 +124,7 @@
   };
 </script>
 
-  <title>Haskell不用队列实现BFS | Carl</title>
+  <title>一些总结 | Carl</title>
   
 
 
@@ -288,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/06/bfs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/08/一些总结/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Carl">
@@ -305,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Haskell不用队列实现BFS
+          <h1 class="post-title" itemprop="name headline">一些总结
 
               
             
@@ -331,24 +332,12 @@
                 
               
 
-              <time title="Created: 2019-10-06 03:48:39" itemprop="dateCreated datePublished" datetime="2019-10-06T03:48:39+08:00">2019-10-06</time>
+              <time title="Created: 2019-10-08 01:50:32 / Modified: 02:21:17" itemprop="dateCreated datePublished" datetime="2019-10-08T01:50:32+08:00">2019-10-08</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-10-08 01:47:36" itemprop="dateModified" datetime="2019-10-08T01:47:36+08:00">2019-10-08</time>
               
             
           </span>
@@ -381,16 +370,14 @@
       
 
       
-        <p>最近在写haskell代码的时候遇到一些搜索的问题（本来对haskell的理解就不咋地），想法总是受编程范式的限制，写不出来，写DFS还好，函数递归就行，而想到BFS就不得不用队列实现，我在网上也找到了几个队列实现的BFS</p>
-<h2 id="队列实现的BFS"><a href="#队列实现的BFS" class="headerlink" title="队列实现的BFS"></a>队列实现的BFS</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">breadFirstSearch</span> :: <span class="type">Ix</span> a =&gt; a -&gt; <span class="type">Graph</span> a a -&gt; [a]</span><br><span class="line"><span class="title">breadFirstSearch</span> start g = reverse (bfs (enqueue start emptyQueue) [])</span><br><span class="line"><span class="title">where</span> </span><br><span class="line"><span class="title">bfs</span> q vis | (queueEmpty q) = vis </span><br><span class="line">| elem (front q) vis = bfs (dequeue q) vis </span><br><span class="line">| otherwise = <span class="keyword">let</span> c = front q</span><br><span class="line"><span class="title">in</span></span><br><span class="line"><span class="title">bfs</span> (foldr enqueue </span><br><span class="line">(dequeue q)</span><br><span class="line">(adjacent g c))</span><br><span class="line">(c:vis)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.meiwen.com.cn/subject/fmkrottx.html" target="_blank" rel="noopener">出自这里</a></p>
-<p>本来想就这样写吧，但在hackage中竟然没找到一个简单的Queue库，说到这里就再插一段，关于haskell怎么用双列表维护一个<code>O(n)</code>时间内的FIFO队列。</p>
-<h2 id="FIFO队列"><a href="#FIFO队列" class="headerlink" title="FIFO队列"></a>FIFO队列</h2><p>大概思路就是前一个列表用于出队列，后一个列表用于入队列，由于都是在列表头部操作就不会产生太大开销，当然，这样还没完，如果仅这样就会产生前一个列表已经pop为空无法取数据，而后一个列表还有大部分数据未被取出，解决这问题的方法也很简单，就是在前一个列表比后一个列表短时，将后一个列表反转后追加在第一列表后面，而后一个列表置空。</p>
-<p>你也可以为加入Maybe类型，和实现State Monad Wrapper使其更方便使用。</p>
-<p><a href="https://rafal.io/posts/haskell-queues.html" target="_blank" rel="noopener">这里有实现</a></p>
-<p>下面就进入正题，说说怎么互递归实现BFS遍历树</p>
-<h2 id="互递归实现BFS"><a href="#互递归实现BFS" class="headerlink" title="互递归实现BFS"></a>互递归实现BFS</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span> <span class="type">Tree</span> = <span class="type">T</span> &#123; <span class="title">depth</span>  :: !<span class="type">Int</span></span></span><br><span class="line"><span class="class">              , <span class="title">value</span>  :: !<span class="type">Int</span></span></span><br><span class="line"><span class="class">              , <span class="title">l</span>      :: <span class="type">Tree</span></span></span><br><span class="line"><span class="class">              , <span class="title">r</span>      :: <span class="type">Tree</span> &#125; </span></span><br><span class="line">   <span class="comment">-- 无限树</span></span><br><span class="line">   </span><br><span class="line"><span class="title">completeBinaryTree</span> :: <span class="type">Tree</span></span><br><span class="line"><span class="title">completeBinaryTree</span> = go <span class="number">0</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">where</span></span><br><span class="line">    go d v = <span class="type">T</span> &#123; depth = d</span><br><span class="line">               , value = v</span><br><span class="line">               , l     = go (d + <span class="number">1</span>) (<span class="number">2</span> * v )</span><br><span class="line">               , r     = go (d + <span class="number">1</span>) (<span class="number">2</span> * v + <span class="number">1</span>) &#125;          </span><br><span class="line">  <span class="comment">-- 完全二叉树</span></span><br><span class="line">  </span><br><span class="line"><span class="title">bfs</span> :: <span class="type">Tree</span> -&gt; [<span class="type">Tree</span>]</span><br><span class="line"><span class="title">bfs</span> root =</span><br><span class="line">  <span class="keyword">let</span></span><br><span class="line">    nodes = root : children</span><br><span class="line">    children = concatMap (\t -&gt; [l t, r t]) nodes</span><br><span class="line">  <span class="keyword">in</span> node</span><br><span class="line">    <span class="comment">-- 就这里</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&gt; value &lt;$&gt; take <span class="number">10</span> (bfs completeBinaryTree)</span><br><span class="line"><span class="comment">-- 结果</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.nmattia.com/posts/2016-07-31-bfs-tree.html" target="_blank" rel="noopener">参考</a> </p>
+        <p>近来也写了一些 <code>haskell</code>代码，本文就随便说说感受和一些总结</p>
+<h3 id="说一下最近学到点什么"><a href="#说一下最近学到点什么" class="headerlink" title="说一下最近学到点什么"></a>说一下最近学到点什么</h3><p>学<code>haskell</code>也有一年了，之前从来没接触过函数式的语言，也就最近算写的代码比较多的了，之前一直都是沉浸在<code>haskell</code>的各种特性中，因为从没有接触过所以特别新奇，<br>刚开始学的时候<code>monad</code>可是把我难倒了，不多bb，写点总结吧。</p>
+<h5 id="透镜组"><a href="#透镜组" class="headerlink" title="透镜组"></a>透镜组</h5><p>这个看过几次，但是没用过，也没有遇到需要用的</p>
+<h5 id="State-Monad"><a href="#State-Monad" class="headerlink" title="State Monad"></a><code>State Monad</code></h5><p>没真正用过，看了一遍又一遍，不知道怎么下手，什么时候用，看那些函数作为参数的函数实在费脑筋</p>
+<h5 id="Writer-Monad"><a href="#Writer-Monad" class="headerlink" title="Writer Monad"></a><code>Writer Monad</code></h5><p>用过一两次，不熟练</p>
+<h5 id="gt-r-Monad"><a href="#gt-r-Monad" class="headerlink" title="(-&gt;) r Monad"></a><code>(-&gt;) r Monad</code></h5><p>主要平时会用一下   <code>p &lt;$&gt; f &lt;*&gt; g</code>将两个应用同样参数的函数连起来<br>这和<code>on</code>有点像，<code>on :: (b -&gt; b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; a -&gt; c</code>，通常和 <code>compre</code>一起用</p>
+<h5 id="Monad转换器"><a href="#Monad转换器" class="headerlink" title="Monad转换器"></a><code>Monad</code>转换器</h5><p>基本没用过，主要没写过大项目</p>
+<h3 id="暂时先写这么多，等有更深的理解了再来补"><a href="#暂时先写这么多，等有更深的理解了再来补" class="headerlink" title="暂时先写这么多，等有更深的理解了再来补"></a>暂时先写这么多，等有更深的理解了再来补</h3><h6 id="写了一段时间后感觉循环都不会写了"><a href="#写了一段时间后感觉循环都不会写了" class="headerlink" title="写了一段时间后感觉循环都不会写了"></a>写了一段时间后感觉循环都不会写了</h6><p>感觉也就那么样，没有刚学时那么新奇，但依然有学不完的东西，有些不适合的场景强行用函数式思维确实费劲，但适合的场景用起来真的爽。<br>最近用队列时看了<code>Data.Sequence</code>，比较好奇是怎么实现的<code>O(1)</code>时间进出队列的，看网上说是复杂的数据结构还有编译器优化。</p>
 
       
     </div>
@@ -416,6 +403,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/haskell/" rel="tag"># haskell</a>
+          
+        </div>
+      
 
       
       
@@ -425,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/23/ftp/" rel="next" title="war-ftp1.65用户名缓冲区溢出">
-                <i class="fa fa-chevron-left"></i> war-ftp1.65用户名缓冲区溢出
+              <a href="/2019/10/06/bfs/" rel="next" title="Haskell不用队列实现BFS">
+                <i class="fa fa-chevron-left"></i> Haskell不用队列实现BFS
               </a>
             
           </div>
@@ -434,10 +427,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/08/一些总结/" rel="prev" title="一些总结">
-                一些总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -588,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#队列实现的BFS"><span class="nav-number">1.</span> <span class="nav-text">队列实现的BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIFO队列"><span class="nav-number">2.</span> <span class="nav-text">FIFO队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互递归实现BFS"><span class="nav-number">3.</span> <span class="nav-text">互递归实现BFS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#说一下最近学到点什么"><span class="nav-number">1.</span> <span class="nav-text">说一下最近学到点什么</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#透镜组"><span class="nav-number">1.0.1.</span> <span class="nav-text">透镜组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#State-Monad"><span class="nav-number">1.0.2.</span> <span class="nav-text">State Monad</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Writer-Monad"><span class="nav-number">1.0.3.</span> <span class="nav-text">Writer Monad</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#gt-r-Monad"><span class="nav-number">1.0.4.</span> <span class="nav-text">(-&gt;) r Monad</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Monad转换器"><span class="nav-number">1.0.5.</span> <span class="nav-text">Monad转换器</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#暂时先写这么多，等有更深的理解了再来补"><span class="nav-number">2.</span> <span class="nav-text">暂时先写这么多，等有更深的理解了再来补</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#写了一段时间后感觉循环都不会写了"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">写了一段时间后感觉循环都不会写了</span></a></li></ol></li></div>
             
 
           </div>
